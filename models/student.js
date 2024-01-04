@@ -5,7 +5,7 @@ const professionSchema=mongoose.Schema({
     numLessons:Number
 })
 const studentSchema=mongoose.Schema({
-    mane:{type:String,required:true},
+    name:{type:String,required:true},
     author:mongoose.Schema({
         name:String,
     }),

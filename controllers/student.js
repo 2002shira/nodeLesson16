@@ -30,14 +30,14 @@ const addStudent = async (req, res) => {
     if (!name || !proffesion)
         return res.status(404).send("name and proffession required");
     try {
-        let sameStudent = await studentModel.find({ name, proffesion });
+        let sameStudent = await studentModel.findOne({ name, proffesion });
         if (sameStudent)
             return res.status(409).send("this student is already exists in the college");
         let newStudent=await studentModel.create({name, inHighLevel, startDate, proffesion});
         res.json (newStudent)
     }
     catch (error) {
-        res.statud(400).send("there was error adding the details" + error.message);
+        res.status(400).send("there was error adding the details" + error.message);
     }
 }
 const updateStudent = async (req, res) => {

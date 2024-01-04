@@ -4,6 +4,6 @@ import express from "express"
 const router=express.Router();
 router.get("/",getAllStudents);
 router.delete("/:studetId",deleteStudentById);
-// router.post("/" studentController.updateStudent);
-router.put("/:studentId",addStudent)
+router.post("/" ,addStudent);
+router.put("/:studentId",updateStudent)
 export default router;
