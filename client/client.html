@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div">amount of students </div>
+    <script>
+        bringAllStudents();
+
+        async function bringAllStudents() {
+            try {
+                let res = await fetch("http://localhost:5002/api/students")
+                let arr = await res.json();
+                document.getElementById("div").innerHTML += arr.length;
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+    </script>
+</body>
+
+</html>
